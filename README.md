@@ -11,6 +11,16 @@ Below you will find system requirements and deployment instructions.
 * [NuGet (latest version)](http://www.nuget.org)
 * Windows Azure Account - [Sign up for a free trial](https://www.windowsazure.com/en-us/pricing/free-trial/).
 
+## Additional Resources
+Click the links below for more information on the technologies used in this sample.
+
+* Blog Post: [Windows Azure Web Sites Modern Application Sample - Cloud Survey](http://blog.ntotten.com/2012/07/24/windows-azure-web-sites-modern-application-sample-cloud-survey/)
+* [Live Demo](http://cloudsurvey.azurewebsites.net) (username: admin; password: Contoso123!)
+* [ASP.NET MVC 4](http://www.asp.net/mvc/mvc4)
+* [ASP.NET Web API](http://www.asp.net/web-api/overview)
+* [SignalR](http://signalr.net/)
+* [Ember.js](http://emberjs.com/)
+
 ## Deployment Instructions
 
 1. To begin, either download the latest version of the sample by clicking the [Zip button](https://github.com/WindowsAzure-Samples/CloudSurvey/zipball/master) on this page or by performing a git clone of this repository. You can either use the git command line tool or [Github for Windows](github-windows://openRepo/https://github.com/WindowsAzure-Samples/CloudSurvey) to clone the repository.
@@ -89,10 +99,3 @@ Below you will find system requirements and deployment instructions.
   
   ![Summary](https://github.com/WindowsAzure-Samples/CloudSurvey/raw/master/assets/cloudsurvey_summary.png)
   
-## Additional Resources
-Click the links below for more information on the technologies used in this sample.
-
-* [ASP.NET MVC 4](http://www.asp.net/mvc/mvc4)
-* [ASP.NET Web API](http://www.asp.net/web-api/overview)
-* [SignalR](http://signalr.net/)
-* [Ember.js](http://emberjs.com/)
