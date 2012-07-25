@@ -1,0 +1,65 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Survey Summary</title>
+    @Styles.Render("~/Content/Site.css")
+</head>
+<body class="survey-form-body">
+    <div id="survey-container" class="survey-form-div">
+        <div id="survey-details">
+            <script type="text/x-handlebars">
+                {{#if App.surveySummaryController.content}}
+                {{#view App.SurveyDetailsView}}
+                    <h2>Survey Summary: {{content.Name}}</h2>
+                    <ol>
+                        {{#each content.Questions}}
+                        <li>
+                            <p>
+                                <span class="index">{{Index}}. </span>
+                                <span>{{Description}}</span>
+                            </p>
+                            <div class="chart">
+                                {{#if Results}}
+                                    {{view App.ResultsArea valueBinding="this"}}
+                                {{else}}
+                                    <div class="no-results">No results yet.</div>
+                                {{/if}}
+                            </div>
+                        </li>
+                        {{/each}}
+                    </ol>
+                {{/view}}
+                {{else}}
+                    {{#if App.surveySummaryController.statusMessage}}
+                        <div id="status-message">
+                            {{#view App.StatusMessageView}}
+                                <div id="message-title">{{content.title}}</div>
+                                <div id="message-description">{{content.description}}</div>
+                            {{/view}}
+                        </div>
+                    {{/if}}
+                {{/if}}
+            </script>
+        </div>
+    </div>
+
+    <script>
+        var surveySlug = "@ViewBag.SurveySlug";
+    </script>
+
+    @Scripts.Render("~/Scripts/jquery-1.6.4.js")
+    @Scripts.Render("~/Scripts/jquery-ui-1.8.11.js")
+    @Scripts.Render("~/Scripts/ember-0.9.8.1.js")
+    @Scripts.Render("~/Scripts/flotr2.js")
+    @Scripts.Render("~/Scripts/jquery.signalR-0.5.1.js")
+    @Scripts.Render("~/Scripts/surveySummary.js")
+    @Scripts.Render("~/signalr/hubs")
+</body>
+
+</html>

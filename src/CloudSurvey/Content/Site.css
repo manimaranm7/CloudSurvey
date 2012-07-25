@@ -1,0 +1,675 @@
+﻿/*
+    =reset  */
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+q:before, q:after {
+    content: '';
+}
+
+abbr, acronym {
+    border: 0;
+}
+
+/*
+    =fonts  */
+
+@font-face {
+    font-family: Helvetica, Verdana, Arial;
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Helvetica, Verdana, Arial;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*
+    =common  */
+html {
+    height: 100%;
+}
+
+header, nav, section, article, aside, footer {
+    display: block;
+}
+
+body {
+    font-family: Helvetica, Verdana, Arial;
+    font-size: 100%;
+    color: #787878;
+    height: 100%;
+}
+
+h1 {
+    font-family: Helvetica, Verdana, Arial;
+    color: #00BBF1;
+    font-size: 4em;
+    padding-top: 5px;
+    text-transform: lowercase;
+}
+
+h2 {
+    font-size: 1.4em;
+    padding-top: 15px;
+    text-transform: lowercase;
+}
+
+header {
+    background: #E6E6E6;
+    border-bottom: 1px solid #E9E9E9;
+}
+
+    header div.content-wrapper {
+        height: 100%;
+        overflow: auto;
+    }
+
+    header div.float-left {
+        float: left;
+        width: 200px;
+    }
+
+        header div.float-left p {
+            padding: 18px 30px;
+            color: #2D2D2D;
+            width: 200px;
+        }
+
+            header div.float-left p a {
+                color: #2D2D2D;
+                text-decoration: none;
+                font-size: 1.1em;
+            }
+
+    header div.float-right {
+        float: right;
+    }
+
+        header div.float-right ul {
+            padding: 8px 0px;
+        }
+
+            header div.float-right ul li {
+                display: inline;
+                font-weight: bold;
+                margin-right: 15px;
+                font-size: 1em;
+            }
+
+                header div.float-right ul li a {
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    color: #888888;
+                }
+
+section.main-content {
+    padding: 30px;
+}
+
+section#login {
+    text-align: right;
+    font-size: .9em;
+    margin-top: 10px;
+    height: 15px;
+}
+
+    section#login ul {
+        display: inline;
+    }
+
+    section#login p {
+        margin-right: 15px;
+    }
+
+    section#login a {
+        text-decoration: none;
+        color: #626262;
+        font-weight: bold;
+    }
+
+form {
+    margin-top: 15px;
+}
+
+    form fieldset,
+    form p,
+    form div.note {
+        width: 300px;
+    }
+
+    form legend {
+        display: none;
+    }
+
+    form label {
+        display: block;
+        margin-top: 25px;
+        margin-bottom: 5px;
+        font-size: .9em;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+        form label.checkbox {
+            display: inline;
+            text-transform: capitalize;
+            color: #7B7B7B;
+        }
+
+    form input[type="text"],
+    form input[type="password"] {
+        border: solid 2px #BCBCBC;
+        font-size: 1.5em;
+        padding: 2px 5px;
+        width: 285px;
+    }
+
+    form input[type="checkbox"] {
+        margin-top: 20px;
+    }
+
+    form input[type="submit"] {
+        background: #00BBF1;
+        border: none;
+        color: #FFFFFF;
+        padding: 8px 15px;
+        font-weight: bold;
+        margin: 30px 0px 10px;
+        text-transform: uppercase;
+        float: right;
+    }
+
+    form p form p a {
+        color: #0F8399;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    form div.note {
+        border: 1px solid #FFBF00;
+        background: #FFFFBF;
+        padding: 5px 10px;
+        float: right;
+    }
+
+        form div.note p {
+            text-align: left;
+            font-size: .8em;
+        }
+
+            form div.note p strong {
+                font-weight: bold;
+            }
+
+.error {
+    color: #e80c4d;
+    font-size: .8em;
+}
+
+.field-validation-error {
+    color: #e80c4d;
+    font-size: 1em;
+}
+
+input[type="text"].input-validation-error,
+input[type="password"].input-validation-error {
+    border: 1px solid #e80c4d !important;
+}
+
+.validation-summary-errors {
+    color: #e80c4d;
+    font-size: 1em;
+    margin-top: 5px;
+}
+
+/*
+    admin */
+
+div#wrapper {
+    width: 100%;
+    min-width: 980px;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+}
+
+    div#wrapper.admin h2 {
+        padding: 20px 25px;
+        font-size: 1.9em;
+        text-transform: capitalize;
+        color: #020202;
+        background-color: #FFFFFF;
+    }
+
+    div#wrapper header {
+        border: none;
+    }
+
+#middle {
+    width: 100%;
+    padding: 0 0 60px;
+    height: 1%;
+    position: relative;
+}
+
+    #middle:after {
+        content: '.';
+        display: block;
+        clear: both;
+        visibility: hidden;
+        height: 0;
+    }
+
+#container {
+    width: 100%;
+    float: left;
+    overflow: hidden;
+}
+
+#survey-list {
+    float: left;
+    width: 265px;
+    margin-left: -100%;
+    position: relative;
+    border-right: 1px solid #D7D7D7;
+}
+
+    #survey-list ul.more-info {
+        background-color: #7C7C7C;
+        padding: 0px;
+        margin: 0px;
+    }
+
+        #survey-list ul.more-info li {
+            font-weight: 600;
+            word-break: break-all;
+            padding: 0px;
+            color: #FFFFFF;
+            padding-left: 60px;
+            line-height: 45px;
+            height: 45px;
+            text-transform: uppercase;
+            font-size: .8em;
+            cursor: default;
+        }
+
+            #survey-list ul.more-info li span {
+                float: right;
+                font-weight: normal;
+                padding-right: 15px;
+            }
+
+            #survey-list ul.more-info li.header {
+                color: #5B5B5B;
+                background: #FFFFFF;
+                min-height: 45px;
+                height: auto;
+                padding: 4px 0px 4px 25px;
+                text-transform: capitalize;
+                font-size: 1em;
+                cursor: pointer;
+            }
+
+    #survey-list div.is-selected li ul li.header {
+        color: #FFFFFF;
+        background: #939393;
+        cursor: default;
+    }
+
+    #survey-list ul.more-info li.publish-date {
+        background: url(../Images/icons.png) no-repeat 25px -90px;
+    }
+
+    #survey-list ul.more-info li.notes {
+        background: url(../Images/icons.png) no-repeat 25px -135px;
+    }
+
+    #survey-list ul.more-info li.stats {
+        background: url(../Images/icons.png) no-repeat 25px -180px;
+    }
+    
+    #survey-list ul.more-info li.stats a {
+        color: #FFFFFF;
+    }
+
+#detail {
+    padding: 0 0 10px 280px;
+}
+
+    #detail div.survey-questions {
+        overflow: auto;
+        margin-bottom: 20px;
+        min-height: 200px;
+        height: 200px;
+    }
+
+    #detail div.name {
+        font-family: Helvetica, Verdana, Arial;
+        font-size: 3em;
+        color: #020202;
+        float: left;
+        word-break: break-all;
+    }
+
+        #detail div.name input {
+            font-family: Helvetica, Verdana, Arial;
+            font-size: 1em;
+            background: #E5E5E5;
+            font-style: italic;
+            border: none;
+            width: 98%;
+            font-weight: 600;
+        }
+
+    #detail div.description {
+        clear: both;
+        margin-top: 20px;
+        font-size: 1.1em;
+        color: #1E1E1E;
+        margin-bottom: 15px;
+        max-height: 100px;
+        overflow: auto;
+        width: 98%;
+    }
+
+        #detail div.description textarea {
+            font-family: Helvetica, Verdana, Arial;
+            font-size: 1em;
+            color: #626262;
+            padding: 5px;
+            background: #E5E5E5;
+            font-style: italic;
+            border: none;
+            width: 98%;
+            font-weight: 600;
+            height: 75px;
+        }
+
+    #detail table {
+        width: 98%;
+    }
+
+        #detail table th {
+            text-transform: uppercase;
+            font-weight: bold;
+            border-bottom: 4px solid #DEDEDE;
+            font-size: .8em;
+            padding: 10px 0px;
+        }
+
+        #detail table td.index {
+            font-size: .9em;
+            padding-left: 10px;
+            width: 40px;
+        }
+
+        #detail table th.type {
+            width: 200px;
+        }
+
+        #detail table th.actions {
+            width: 40px;
+        }
+
+        #detail table td {
+            border-bottom: 1px solid #C9C9C9;
+            font-size: 1em;
+            padding: 15px 0px;
+            font-weight: 600;
+        }
+
+            #detail table td input,
+            #detail table td select {
+                color: #626262;
+                font-size: 1em;
+                padding: 12px;
+                width: 92%;
+                background: #E6E6E6;
+                font-style: italic;
+                border: none;
+            }
+
+    #detail .delete-question-view {
+        width: 12px;
+        height: 12px;
+        background: url(../Images/icons.png) no-repeat 0px -225px;
+        cursor: pointer;
+    }
+
+button {
+    background: transparent;
+    border: none;
+    font-weight: bold;
+    color: #757575;
+    padding-left: 43px;
+    cursor: pointer;
+    font-size: .9em;
+    text-transform: uppercase;
+    height: 30px;
+}
+
+    button.new-survey {
+        background: url(../Images/icons.png) no-repeat 0px -0px;
+        color: #FFFFFF;
+        line-height: 30px;
+    }
+
+    button.delete-survey {
+        background: url(../Images/icons.png) no-repeat 0px -60px;
+        text-indent: -9999px;
+        float: right;
+        margin-top: 20px;
+        line-height: 30px;
+    }
+
+    button.add-question {
+        background: url(../Images/icons.png) no-repeat 0px -30px;
+        color: #00BBF1;
+        line-height: 30px;
+    }
+
+a.help {
+    /*background: url(../Images/icons.png) no-repeat 0px -0px;*/
+    background: transparent;
+    border: none;
+    font-weight: bold;
+    color: #757575;
+    padding-left: 43px;
+    cursor: pointer;
+    font-size: .9em;
+    text-transform: uppercase;
+    height: 30px;
+    color: #FFFFFF;
+    line-height: 30px;
+    text-decoration: none;
+    float: right;
+}
+
+footer {
+    margin: -60px auto 0;
+    min-width: 980px;
+    background: #00BBF1;
+    color: #FFFFFF;
+    padding: 15px 30px;
+    position: relative;
+}
+
+/*SurveyForm*/
+
+.survey-form-body {
+    color: #626262;
+    background: #e2e2e2;
+}
+
+div#survey-container.survey-form-div {
+    width: 700px;
+    margin: 0px auto;
+    background: #FFFFFF;
+}
+
+    div#survey-container.survey-form-div h2 {
+        font-size: 2em;
+        text-transform: capitalize;
+        background: #454545;
+        color: #FFFFFF;
+        padding: 15px 25px;
+    }
+    
+    div#survey-container.survey-form-div h3 {
+        font-size: 1em;
+        background: #454545;
+        color: #FFFFFF;
+        padding: 0px 25px 10px;
+    }
+
+div#survey-details ol {
+    margin: 0px 15px;
+}
+
+    div#survey-details ol li {
+        list-style-position: inside;
+        border-bottom: 2px solid #D9D9D9;
+        padding: 20px 30px;
+        font-size: 1.1em;
+    }
+    
+        div#survey-details ol li.summary-form-question {
+            list-style-type: decimal;
+        }
+        
+        div#survey-details ol li .index{
+            font-size: .9em;
+            padding-right: 15px;
+        }
+
+div#survey-details select {
+    font-family: Helvetica, Verdana, Arial;
+    float: right;
+    display: inline;
+    border: solid 2px #D9D9D9;
+    margin-right: 32px;
+    width: 130px;
+    color: #626262;
+    font-size: 1.1em;
+}
+
+div#survey-details textarea {
+    font-family: Helvetica, Verdana, Arial;
+    display: block;
+    border: solid 2px #D9D9D9;
+    margin-top: 20px;
+    width: 542px;
+    font-size: 1.2em;
+    height: 95px;
+    color: #626262;
+    margin-left: 32px;
+}
+
+div.toolbar {
+    margin: 0px 15px 50px 0px;
+    padding-bottom: 50px;
+    text-align: right;
+}
+
+button.submit-survey {
+    background: #00BCF2;
+    color: #FFFFFF;
+    padding: 8px 15px;
+    margin: 30px 0px 10px;
+}
+
+button.submit-done {
+    background: #00BCF2;
+    color: #FFFFFF;
+    padding: 8px 15px;
+    margin: 30px 0px 10px;
+}
+
+div#status-message {
+    height: 340px;
+    padding-top: 96px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+div#message-title {
+    font-family: Helvetica, Verdana, Arial;
+    font-size: 4em;
+    margin-bottom: 20px;
+    color: #00BCF2;
+}
+
+/* Summary page */
+
+div#survey-details .resultText {
+    padding-right: 10px;
+    overflow: auto;
+    max-height: 120px;
+    word-wrap: break-word;
+}
+
+div#survey-details .resultScale {
+    width: 300px;
+    height: 70px;
+}
+
+div#survey-details .resultBoolean {
+    width: 300px;
+    height: 150px;
+}
+
+div#survey-details div.chart {
+    margin-top: 10px;
+    padding: 10px 30px;
+    border: solid 1px #CCC;
+    width: 500px;
+}
+
+div#survey-details div.chart p {
+    border-bottom: solid 1px #d9d9d9;
+}
+
+div#survey-details div.chart div.no-results {
+    font-family: Helvetica, Verdana, Arial;
+    font-style: italic;
+    font-size: 80%;        
+    color: #888888;
+}

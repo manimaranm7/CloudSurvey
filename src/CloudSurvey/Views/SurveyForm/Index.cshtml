@@ -1,0 +1,65 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Survey Form</title>
+    @Styles.Render("~/Content/Site.css")
+</head>
+<body class="survey-form-body">
+    <div id="survey-container" class="survey-form-div">
+        <div id="survey-details">
+            <script type="text/x-handlebars">
+                {{#if App.surveyFormController.content}}
+                {{#view App.SurveyDetailsView}}
+                    <h2>Survey Form: {{content.Name}}</h2>
+                    <h3>Please, complete this survey and press submit when finished.</h3>
+                    <ol>
+                        {{#each content.Questions}}
+                        <li class="summary-form-question">
+                            {{Description}}
+                            {{#isTextQuestion}}
+                                {{view Ember.TextArea valueBinding="answer" propagatesEvents=true}}
+                            {{/isTextQuestion}}
+                            {{#isBooleanQuestion}}
+                                {{view App.BooleanSelect selectionBinding="answer"}}}
+                            {{/isBooleanQuestion}}
+                            {{#isScaleQuestion}}
+                                {{view App.ScaleSelect selectionBinding="answer"}}}
+                            {{/isScaleQuestion}}
+                        </li>
+                        {{/each}}
+                    </ol>
+                {{/view}}
+                <div class="toolbar">
+                    {{#view App.SubmitButton class="submit-survey"}}Submit Survey{{/view}}
+                </div>
+                {{else}}                    
+                    {{#if App.surveyFormController.statusMessage}}
+                        <div id="status-message">
+                            {{#view App.StatusMessageView}}
+                                <div id="message-title">{{content.title}}</div>
+                                <div id="message-description">{{content.description}}</div>
+                            {{/view}}
+                        </div>
+                    {{/if}}
+                {{/if}}
+            </script>
+        </div>
+    </div>
+
+    <script>
+        var surveySlug = "@ViewBag.SurveySlug";
+    </script>
+
+    @Scripts.Render("~/Scripts/jquery-1.6.4.js")
+    @Scripts.Render("~/Scripts/jquery-ui-1.8.11.js")
+    @Scripts.Render("~/Scripts/ember-0.9.8.1.js")
+    @Scripts.Render("~/Scripts/surveyForm.js")
+</body>
+
+</html>
