@@ -15,6 +15,7 @@ Below you will find system requirements and deployment instructions.
 Click the links below for more information on the technologies used in this sample.
 
 * Blog Post: [Windows Azure Web Sites Modern Application Sample - Cloud Survey](http://blog.ntotten.com/2012/07/24/windows-azure-web-sites-modern-application-sample-cloud-survey/)
+* Screencast: [Intro to the Cloud Survey Sample](http://channel9.msdn.com/posts/Windows-Azure-Web-Sites-Modern-Application-Sample-Cloud-Survey)
 * [Live Demo](http://cloudsurvey.azurewebsites.net) (username: admin; password: Contoso123!)
 * [ASP.NET MVC 4](http://www.asp.net/mvc/mvc4)
 * [ASP.NET Web API](http://www.asp.net/web-api/overview)
